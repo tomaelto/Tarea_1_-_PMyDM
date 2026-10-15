@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Tarea_1_-_PMyDM</string>
+    <string name="no_recuerdo_mi_contrasena">No recuerdo mi contraseña</string>
+    <string name="acceder">Acceder</string>
+    <string name="registrate">Registrate</string>
+    <string name="hint">hint</string>
+    <string name="correo_electronico">Correo Electrónico</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="vistapp">Vistapp</string>
+    <string name="logo">logo</string>
 </resources>

@@ -12,51 +12,45 @@
 
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@layout/fragment_second_" />
-        <action
-            android:id="@+id/action_FragmentUno_to_FragmentDos"
-            app:destination="@id/FragmentDos" />
+            app:destination="@id/FragmentDos"
+            app:popUpTo="@id/FragmentUno"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
         android:id="@+id/FragmentDos"
-        android:name="com.example.tarea_1___pmydm.First_Fragment"
+        android:name="com.example.tarea_1___pmydm.Second_Fragment"
         android:label="Second Fragment"
         tools:layout="@layout/fragment_second_">
 
         <action
             android:id="@+id/action_secondFragment_to_thirdFragment"
-            app:destination="@layout/fragment_third_" />
-        <action
-            android:id="@+id/action_FragmentDos_to_FragmentTres"
             app:destination="@id/FragmentTres" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/FragmentTres"
-        android:name="com.example.tarea_1___pmydm.First_Fragment"
-        android:label="Third Fragment"
-        tools:layout="@layout/fragment_third_">
-
         <action
-            android:id="@+id/action_thirdFragment_to_fourthFragment"
-            app:destination="@layout/fragment_fourth_" />
-        <action
-            android:id="@+id/action_FragmentTres_to_FragmentCuatro"
+            android:id="@+id/action_secondFragment_to_fourthFragment"
             app:destination="@id/FragmentCuatro" />
     </fragment>
 
     <fragment
+        android:id="@+id/FragmentTres"
+        android:name="com.example.tarea_1___pmydm.Third_Fragment"
+        android:label="Third Fragment"
+        tools:layout="@layout/fragment_third_">
+
+        <action
+            android:id="@+id/action_thirdFragment_to_secondFragment"
+            app:destination="@id/FragmentDos" />
+    </fragment>
+
+    <fragment
         android:id="@+id/FragmentCuatro"
-        android:name="com.example.tarea_1___pmydm.First_Fragment"
+        android:name="com.example.tarea_1___pmydm.Fourth_Fragment"
         android:label="Fourth Fragment"
         tools:layout="@layout/fragment_fourth_">
 
         <action
-            android:id="@+id/action_fourthFragment_to_firstFragment"
-            app:destination="@layout/fragment_first_" />
+            android:id="@+id/action_fourthFragment_to_secondFragment"
+            app:destination="@id/FragmentDos" />
     </fragment>
-
-
 
 </navigation>

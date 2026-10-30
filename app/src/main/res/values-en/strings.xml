@@ -1,17 +1,18 @@
 <resources>
     <string name="app_name">Tarea_1_-_PMyDM</string>
-    <string name="no_recuerdo_mi_contrasena">No recuerdo mi contraseña</string>
-    <string name="acceder">Acceder</string>
-    <string name="registrate">Registrate</string>
-    <string name="hint">hint</string>
-    <string name="correo_electronico">Correo Electrónico</string>
-    <string name="contrasena">Contraseña</string>
+    <string name="no_recuerdo_mi_contrasena">I forgot my password</string>
+    <string name="acceder">Log In</string>
+    <string name="registrate">Register</string>
+    <string name="hint">Hint</string>
+    <string name="correo_electronico">Email Address</string>
+    <string name="contrasena">Password</string>
     <string name="vistapp">Vistapp</string>
-    <string name="logo">logo</string>
-    <string name="nombre">Nombre</string>
-    <string name="telefono">Teléfono</string>
+    <string name="logo">Logo</string>
+    <string name="nombre">Name</string>
+    <string name="telefono">Phone Number</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="icono_cargando">icono_cargando</string>
-    <string name="mandar_correo_para_cambiar_contrase_a">Mandar correo para cambiar contraseña</string>
+    <string name="icono_cargando">Loading icon</string>
+    <string name="mandar_correo_para_cambiar_contrase_a">Send email to reset password</string>
+    <string name="iniciar_sesion">Log In</string>
 </resources>

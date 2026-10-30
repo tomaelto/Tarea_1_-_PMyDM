@@ -2,6 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/FragmentUno">
 
     <fragment
@@ -12,9 +13,10 @@
 
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/FragmentDos"
-            app:popUpTo="@id/FragmentUno"
-            app:popUpToInclusive="true" />
+            app:destination="@id/FragmentDos" />
+        <action
+            android:id="@+id/action_firstFragment_to_thirdFragment"
+            app:destination="@id/FragmentTres" />
     </fragment>
 
     <fragment

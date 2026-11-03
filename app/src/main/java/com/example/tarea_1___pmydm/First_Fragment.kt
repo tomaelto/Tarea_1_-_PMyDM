@@ -1,8 +1,6 @@
 package com.example.tarea_1___pmydm
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,12 +24,15 @@ class First_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Pasa solo de Splash a Login cuando pasan 3 segundos
-        Handler(Looper.getMainLooper()).postDelayed({
-            if (isAdded) {
-                findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
-            }
-        }, 3000)
+        // Al pulsar Iniciar Sesion, pasa a la pantalla de login
+        binding.splashBtnLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
+        }
+
+        // // Al pulsar Regístrate, pasa a la pantalla de registro
+        binding.splashBtnRegister.setOnClickListener {
+            findNavController().navigate(R.id.action_firstFragment_to_thirdFragment)
+        }
     }
 
     override fun onDestroyView() {

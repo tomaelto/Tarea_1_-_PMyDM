@@ -33,6 +33,11 @@ class Second_Fragment : Fragment() {
         binding.loginBtnNorecuerdocontrasena.setOnClickListener {
             findNavController().navigate(R.id.action_secondFragment_to_fourthFragment)
         }
+
+        // Al pulsar "acceder", pasa a la pantalla de home
+        binding.loginBtnAcceder.setOnClickListener {
+            findNavController().navigate(R.id.action_secondFragment_to_home)
+        }
     }
 
     override fun onDestroyView() {

@@ -3,64 +3,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FragmentUno">
+    app:startDestination="@id/splashFragment">
 
     <fragment
-        android:id="@+id/FragmentUno"
-        android:name="com.example.tarea_1___pmydm.First_Fragment"
-        android:label="First Fragment"
-        tools:layout="@layout/fragment_first_">
+        android:id="@+id/splashFragment"
+        android:name="com.example.tarea_1___pmydm.fragments.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
 
         <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
-            app:destination="@id/FragmentDos" />
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_firstFragment_to_thirdFragment"
-            app:destination="@id/FragmentTres" />
+            android:id="@+id/action_splashFragment_to_registroFragment"
+            app:destination="@id/registroFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/FragmentDos"
-        android:name="com.example.tarea_1___pmydm.Second_Fragment"
-        android:label="Second Fragment"
-        tools:layout="@layout/fragment_second_">
+        android:id="@+id/loginFragment"
+        android:name="com.example.tarea_1___pmydm.fragments.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
 
         <action
-            android:id="@+id/action_secondFragment_to_thirdFragment"
-            app:destination="@id/FragmentTres" />
+            android:id="@+id/action_loginFragment_to_registroFragment"
+            app:destination="@id/registroFragment" />
         <action
-            android:id="@+id/action_secondFragment_to_fourthFragment"
-            app:destination="@id/FragmentCuatro" />
+            android:id="@+id/action_loginFragment_to_recuperarContrasenaFragment"
+            app:destination="@id/recuperarContrasenaFragment" />
         <action
-            android:id="@+id/action_secondFragment_to_home"
-            app:destination="@id/home" />
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/FragmentTres"
-        android:name="com.example.tarea_1___pmydm.Third_Fragment"
-        android:label="Third Fragment"
-        tools:layout="@layout/fragment_third_">
+        android:id="@+id/registroFragment"
+        android:name="com.example.tarea_1___pmydm.fragments.RegistroFragment"
+        android:label="RegistroFragment"
+        tools:layout="@layout/fragment_registro">
 
         <action
-            android:id="@+id/action_thirdFragment_to_secondFragment"
-            app:destination="@id/FragmentDos" />
+            android:id="@+id/action_registroFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/FragmentCuatro"
-        android:name="com.example.tarea_1___pmydm.Fourth_Fragment"
-        android:label="Fourth Fragment"
-        tools:layout="@layout/fragment_fourth_">
+        android:id="@+id/recuperarContrasenaFragment"
+        android:name="com.example.tarea_1___pmydm.fragments.RecuperarContrasenaFragment"
+        android:label="RecuperarContrasenaFragment"
+        tools:layout="@layout/fragment_recuperar_contrasena">
 
         <action
-            android:id="@+id/action_fourthFragment_to_secondFragment"
-            app:destination="@id/FragmentDos" />
+            android:id="@+id/action_recuperarContrasenaFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/home"
-        android:name="com.example.tarea_1___pmydm.HomeFragment"
+        android:id="@+id/homeFragment"
+        android:name="com.example.tarea_1___pmydm.fragments.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
 

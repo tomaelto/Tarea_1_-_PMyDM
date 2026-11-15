@@ -1,4 +1,6 @@
-package com.example.tarea_1___pmydm
+package com.example.tarea_1___pmydm.fragments
+
+import com.example.tarea_1___pmydm.R
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,14 +14,14 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.example.tarea_1___pmydm.databinding.FragmentSecondBinding
+import com.example.tarea_1___pmydm.databinding.FragmentLoginBinding
 import com.example.tarea_1___pmydm.viewmodels.LoginUiEvent
 import com.example.tarea_1___pmydm.viewmodels.LoginViewModel
 import kotlinx.coroutines.launch
 
-class Second_Fragment : Fragment() {
+class LoginFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: LoginViewModel by viewModels()
@@ -28,7 +30,7 @@ class Second_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -37,12 +39,12 @@ class Second_Fragment : Fragment() {
 
         // Al pulsar Regístrate, pasa a la pantalla de registro
         binding.loginBtnRegistrate.setOnClickListener {
-            findNavController().navigate(R.id.action_secondFragment_to_thirdFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_registroFragment)
         }
 
         // Al pulsar "No recuerdo mi contraseña", pasa a la pantalla de recuperación de contraseña
         binding.loginBtnNorecuerdocontrasena.setOnClickListener {
-            findNavController().navigate(R.id.action_secondFragment_to_fourthFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_recuperarContrasenaFragment)
         }
 
         lifecycleScope.launch {
@@ -58,7 +60,7 @@ class Second_Fragment : Fragment() {
                     viewModel.uiEvent.collect { event ->
                         when (event) {
                             is LoginUiEvent.NavigateToHome ->
-                                findNavController().navigate(R.id.action_secondFragment_to_home)
+                                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                             is LoginUiEvent.ShowError ->
                                 Toast.makeText(requireContext(), getString(event.messageResId), Toast.LENGTH_SHORT).show()
                         }

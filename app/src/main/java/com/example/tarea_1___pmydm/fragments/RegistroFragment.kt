@@ -1,4 +1,6 @@
-package com.example.tarea_1___pmydm
+package com.example.tarea_1___pmydm.fragments
+
+import com.example.tarea_1___pmydm.R
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,14 +14,14 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.example.tarea_1___pmydm.databinding.FragmentThirdBinding
+import com.example.tarea_1___pmydm.databinding.FragmentRegistroBinding
 import com.example.tarea_1___pmydm.viewmodels.RegistroUiEvent
 import com.example.tarea_1___pmydm.viewmodels.RegistroViewModel
 import kotlinx.coroutines.launch
 
-class Third_Fragment : Fragment() {
+class RegistroFragment : Fragment() {
 
-    private var _binding: FragmentThirdBinding? = null
+    private var _binding: FragmentRegistroBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: RegistroViewModel by viewModels()
@@ -28,7 +30,7 @@ class Third_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentThirdBinding.inflate(inflater, container, false)
+        _binding = FragmentRegistroBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -50,7 +52,7 @@ class Third_Fragment : Fragment() {
                     viewModel.uiEvent.collect { event ->
                         when (event) {
                             is RegistroUiEvent.NavigateToLogin ->
-                                findNavController().navigate(R.id.action_thirdFragment_to_secondFragment)
+                                findNavController().navigate(R.id.action_registroFragment_to_loginFragment)
                             is RegistroUiEvent.ShowError ->
                                 Toast.makeText(requireContext(), getString(event.messageResId), Toast.LENGTH_SHORT).show()
                         }

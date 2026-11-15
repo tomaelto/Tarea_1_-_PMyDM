@@ -1,4 +1,6 @@
-package com.example.tarea_1___pmydm
+package com.example.tarea_1___pmydm.fragments
+
+import com.example.tarea_1___pmydm.R
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,13 +13,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.example.tarea_1___pmydm.databinding.FragmentFourthBinding
+import com.example.tarea_1___pmydm.databinding.FragmentRecuperarContrasenaBinding
 import com.example.tarea_1___pmydm.viewmodels.RecuperarViewModel
 import kotlinx.coroutines.launch
 
-class Fourth_Fragment : Fragment() {
+class RecuperarContrasenaFragment : Fragment() {
 
-    private var _binding: FragmentFourthBinding? = null
+    private var _binding: FragmentRecuperarContrasenaBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: RecuperarViewModel by viewModels()
@@ -26,7 +28,7 @@ class Fourth_Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFourthBinding.inflate(inflater, container, false)
+        _binding = FragmentRecuperarContrasenaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -49,7 +51,7 @@ class Fourth_Fragment : Fragment() {
 
         // Al pulsar el botón de validación, vuelve a la pantalla de Login
         binding.btnFgpasswValidacion.setOnClickListener {
-            findNavController().navigate(R.id.action_fourthFragment_to_secondFragment)
+            findNavController().navigate(R.id.action_recuperarContrasenaFragment_to_loginFragment)
         }
     }
 

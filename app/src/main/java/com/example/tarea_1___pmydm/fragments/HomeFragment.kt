@@ -1,4 +1,6 @@
-package com.example.tarea_1___pmydm
+package com.example.tarea_1___pmydm.fragments
+
+import com.example.tarea_1___pmydm.R
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

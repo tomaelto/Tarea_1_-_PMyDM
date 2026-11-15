@@ -16,4 +16,10 @@
     <string name="mandar_correo_para_cambiar_contrase_a">Send email to reset password</string>
     <string name="iniciar_sesion">Log In</string>
     <string name="home">Home</string>
+    <string name="error_invalid_email">Invalid email</string>
+    <string name="error_password_too_short">Password must have at least 5 characters</string>
+    <string name="error_invalid_credentials">Invalid credentials</string>
+    <string name="error_nombre_too_short">Name must have at least 3 characters</string>
+    <string name="error_invalid_telefono">Phone number must have 9 digits</string>
+    <string name="error_email_already_registered">This email is already registered</string>
 </resources>

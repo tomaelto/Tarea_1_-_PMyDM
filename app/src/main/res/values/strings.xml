@@ -16,4 +16,10 @@
     <string name="mandar_correo_para_cambiar_contrase_a">Mandar correo para cambiar contraseña</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="home">Home</string>
+    <string name="error_invalid_email">Email incorrecto</string>
+    <string name="error_password_too_short">La contraseña debe tener al menos 5 caracteres</string>
+    <string name="error_invalid_credentials">Credenciales inválidas</string>
+    <string name="error_nombre_too_short">El nombre debe tener al menos 3 caracteres</string>
+    <string name="error_invalid_telefono">El teléfono debe tener 9 dígitos</string>
+    <string name="error_email_already_registered">Este email ya está registrado</string>
 </resources>

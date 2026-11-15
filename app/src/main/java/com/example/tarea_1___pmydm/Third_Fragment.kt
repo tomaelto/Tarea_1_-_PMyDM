@@ -4,14 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.tarea_1___pmydm.databinding.FragmentThirdBinding
+import com.example.tarea_1___pmydm.viewmodels.RegistroUiEvent
+import com.example.tarea_1___pmydm.viewmodels.RegistroViewModel
+import kotlinx.coroutines.launch
 
 class Third_Fragment : Fragment() {
 
     private var _binding: FragmentThirdBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: RegistroViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,9 +35,47 @@ class Third_Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Al pulsar Regístrate, vuelve a la pantalla de Login
+        lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.uiState.collect { state ->
+                        binding.textNombre.error = state.nombreError?.let { getString(it) }
+                        binding.textCorreo.error = state.emailError?.let { getString(it) }
+                        binding.textContrasena.error = state.passwordError?.let { getString(it) }
+                        binding.textTelefono.error = state.telefonoError?.let { getString(it) }
+                        binding.btnRegistrate.isEnabled = state.isRegistroEnabled
+                    }
+                }
+                launch {
+                    viewModel.uiEvent.collect { event ->
+                        when (event) {
+                            is RegistroUiEvent.NavigateToLogin ->
+                                findNavController().navigate(R.id.action_thirdFragment_to_secondFragment)
+                            is RegistroUiEvent.ShowError ->
+                                Toast.makeText(requireContext(), getString(event.messageResId), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
+        }
+
+        // Cada letra que se escribe o se borra avisa al ViewModel
+        binding.nombreRegister.doOnTextChanged { text, _, _, _ ->
+            viewModel.onNombreChanged(text.toString())
+        }
+        binding.correoRegister.doOnTextChanged { text, _, _, _ ->
+            viewModel.onEmailChanged(text.toString())
+        }
+        binding.contrasenaRegister.doOnTextChanged { text, _, _, _ ->
+            viewModel.onPasswordChanged(text.toString())
+        }
+        binding.telefonoRegister.doOnTextChanged { text, _, _, _ ->
+            viewModel.onTelefonoChanged(text.toString())
+        }
+
+        // Al pulsar Regístrate, el ViewModel comprueba los datos
         binding.btnRegistrate.setOnClickListener {
-            findNavController().navigate(R.id.action_thirdFragment_to_secondFragment)
+            viewModel.onRegistroClicked()
         }
     }
 

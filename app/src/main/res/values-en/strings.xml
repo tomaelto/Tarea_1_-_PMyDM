@@ -15,4 +15,5 @@
     <string name="icono_cargando">Loading icon</string>
     <string name="mandar_correo_para_cambiar_contrase_a">Send email to reset password</string>
     <string name="iniciar_sesion">Log In</string>
+    <string name="home">Home</string>
 </resources>

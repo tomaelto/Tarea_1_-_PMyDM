@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Third_Fragment">
 
+    <!-- Logo y título en la misma fila, más pequeños que en vertical -->
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="121dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="64dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintEnd_toStartOf="@id/text_vistapp"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/apparel_24px" />
@@ -21,31 +23,32 @@
         android:id="@+id/text_vistapp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/vistapp"
-        android:textSize="48sp"
+        android:textSize="36sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/image_logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/image_logo" />
+        app:layout_constraintStart_toEndOf="@id/image_logo"
+        app:layout_constraintTop_toTopOf="@id/image_logo" />
 
+    <!-- Primera fila de campos: nombre y correo -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_nombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/nombre"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/text_correo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_vistapp">
+        app:layout_constraintTop_toBottomOf="@id/image_logo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nombre_register"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="textPersonName" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -53,62 +56,58 @@
         android:id="@+id/text_correo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/correo_electronico"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_nombre">
+        app:layout_constraintStart_toEndOf="@id/text_nombre"
+        app:layout_constraintTop_toTopOf="@id/text_nombre">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/correo_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColorHint="#546E7A"
-            tools:ignore="TextContrastCheck" />
+            android:textColorHint="#546E7A" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Segunda fila de campos: contraseña y teléfono -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_contrasena"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:hint="@string/contrasena"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/text_telefono"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_correo">
+        app:layout_constraintTop_toBottomOf="@id/text_nombre">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/contrasena_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            tools:ignore="TextContrastCheck" />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_telefono"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
         android:hint="@string/telefono"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_contrasena">
+        app:layout_constraintStart_toEndOf="@id/text_contrasena"
+        app:layout_constraintTop_toTopOf="@id/text_contrasena">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/telefono_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
-            android:textColorHint="#546E7A"
-            tools:ignore="TextContrastCheck" />
+            android:textColorHint="#546E7A" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -116,11 +115,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="@string/registrate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_telefono" />
+        app:layout_constraintTop_toBottomOf="@id/text_contrasena" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

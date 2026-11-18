@@ -8,13 +8,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-// Datos de la pantalla
-data class RecuperarUiState(
-    val email: String = "",
-    val emailError: Int? = null,
-    val isRecuperarEnabled: Boolean = false
-)
-
 class RecuperarViewModel : ViewModel() {
 
     private val _uiState = MutableStateFlow(RecuperarUiState())

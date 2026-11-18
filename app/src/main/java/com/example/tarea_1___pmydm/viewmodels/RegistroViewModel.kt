@@ -12,25 +12,6 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-// Datos de la pantalla (el ViewModel los conserva al girar la pantalla)
-data class RegistroUiState(
-    val nombre: String = "",
-    val nombreError: Int? = null,
-    val email: String = "",
-    val emailError: Int? = null,
-    val password: String = "",
-    val passwordError: Int? = null,
-    val telefono: String = "",
-    val telefonoError: Int? = null,
-    val isRegistroEnabled: Boolean = false
-)
-
-// Eventos de un solo uso
-sealed interface RegistroUiEvent {
-    object NavigateToLogin : RegistroUiEvent
-    data class ShowError(val messageResId: Int) : RegistroUiEvent
-}
-
 class RegistroViewModel : ViewModel() {
 
     private val _uiState = MutableStateFlow(RegistroUiState())

@@ -12,21 +12,6 @@ import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-// Datos de la pantalla
-data class LoginUiState(
-    val email: String = "",
-    val emailError: Int? = null,
-    val password: String = "",
-    val passwordError: Int? = null,
-    val isLoginEnabled: Boolean = false
-)
-
-// Eventos de un solo uso
-sealed interface LoginUiEvent {
-    object NavigateToHome : LoginUiEvent
-    data class ShowError(val messageResId: Int) : LoginUiEvent
-}
-
 class LoginViewModel : ViewModel() {
 
     private val _uiState = MutableStateFlow(LoginUiState())
